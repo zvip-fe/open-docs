@@ -1,0 +1,23 @@
+{
+  "name": "zh-open-docs",
+  "version": "1.0.0",
+  "description": "open docs for ai",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "process-docs": "tsup --onSuccess \"node dist/index.js\"",
+    "process-mixui": "tsup --onSuccess \"node dist/index.js mixui\""
+  },
+  "packageManager": "pnpm@10.15.0+sha256.84c19e788d7d7ee248e4a6b7152f8ebba0f4fe7380a5f443ca17d76c030052d2",
+  "dependencies": {
+    "sanitize-filename": "^1.6.3",
+    "@kfe/mix-ui": "^1.42.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  }
+}
