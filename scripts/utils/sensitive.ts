@@ -68,14 +68,17 @@ export class SensitiveUtils {
   private static replaceBizContent(content: string): string {
     let cleaned = content;
 
+    // 替换品牌名称为通用「品牌方」
+    cleaned = this.replaceBrandNames(cleaned);
+
     // 替换具体的业务提示文本
     cleaned = cleaned.replace(
       /恭喜！已解锁 0\.75 倍会员时长.*?～/g,
       '这是一个成功提示消息'
     );
 
-    // 替换ZH盐选会员活动内容
-    if (cleaned.includes('盐选好内容') || cleaned.includes('ZH小管家')) {
+    // 替换会员活动内容
+    if (cleaned.includes('会员服务好内容') || cleaned.includes('客服')) {
       cleaned = cleaned.replace(
         /const content = `.*?`/gs,
         `const content = \`<p>这是一个富文本内容示例。</p>
@@ -87,6 +90,63 @@ export class SensitiveUtils {
 </ul>\``
       );
     }
+
+    // 替换复杂的活动规则富文本内容
+    if (cleaned.includes('活动规则') && cleaned.includes('免责声明')) {
+      cleaned = cleaned.replace(
+        /const content = `<p>.*?<\/ul>/gs,
+        `const content = \`<p>这是一个示例活动规则。</p>
+<h3>活动说明</h3>
+<ul>
+  <li>活动期间，用户可以参与相关活动</li>
+  <li>每个用户账号仅可享受一次优惠</li>
+  <li>活动最终解释权归主办方所有</li>
+</ul>\``
+      );
+    }
+
+    // 替换重复的协议内容
+    if (cleaned.includes('会员服务会员狂欢节')) {
+      // 匹配重复的协议文本内容
+      const repeatedText = /欢迎你（以下简称「你」或「用户」）参与由品牌方、品牌方发起的「会员服务会员狂欢节」活动，请详细阅读活动规则及相关条款。凡参与本次活动，均视为你已阅读、理解并同意本活动规则与免责声明的全部内容。/g;
+      
+      // 先统计重复次数
+      const matches = cleaned.match(repeatedText);
+      if (matches && matches.length > 1) {
+        // 替换所有重复内容为简洁的示例文本
+        cleaned = cleaned.replace(
+          /欢迎你（以下简称「你」或「用户」）参与由品牌方、品牌方发起的「会员服务会员狂欢节」活动，请详细阅读活动规则及相关条款。凡参与本次活动，均视为你已阅读、理解并同意本活动规则与免责声明的全部内容。(\s*欢迎你（以下简称「你」或「用户」）参与由品牌方、品牌方发起的「会员服务会员狂欢节」活动，请详细阅读活动规则及相关条款。凡参与本次活动，均视为你已阅读、理解并同意本活动规则与免责声明的全部内容。)*/g,
+          '这是一个示例协议内容，用于展示弹窗的滚动效果。在实际使用中，这里会显示具体的用户协议或服务条款内容。'
+        );
+      }
+    }
+
+    return cleaned;
+  }
+
+  /**
+   * 替换品牌名称为通用术语
+   * @param content 内容
+   * @returns 清理后的内容
+   */
+  private static replaceBrandNames(content: string): string {
+    let cleaned = content;
+
+    // 替换知乎为品牌方
+    cleaned = cleaned.replace(/知乎/g, '品牌方');
+    
+    // 替换盐言故事为品牌方
+    cleaned = cleaned.replace(/盐言故事/g, '品牌方');
+    
+    // 替换盐选为会员服务
+    cleaned = cleaned.replace(/盐选/g, '会员服务');
+    
+    // 替换具体的颜色描述
+    cleaned = cleaned.replace(/知乎蓝|品牌方蓝/g, '主题色');
+    cleaned = cleaned.replace(/VIP 会员色/g, '会员色');
+    
+    // 替换小管家为客服
+    cleaned = cleaned.replace(/知乎小管家|小管家/g, '客服');
 
     return cleaned;
   }

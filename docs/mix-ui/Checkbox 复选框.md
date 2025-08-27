@@ -228,7 +228,7 @@ export default () => {
 | labelPosition | 文本位置，可选值为 `left` | _string_ | `right` |
 | iconSize | 图标大小，默认单位为 `px` | _number \| string_ | `24px` |
 | iconRender | 自定义图标 | _({ checked, disabled }) => ReactNode_ | - |
-| checkedColor | 选中状态颜色 | _string_ | `GBL01A 知乎蓝` |
+| checkedColor | 选中状态颜色 | _string_ | `GBL01A 主题色` |
 | bindGroup | 是否与复选框组绑定 | _boolean_ | `true` |
 
 ### CheckboxGroup Props
@@ -241,7 +241,7 @@ export default () => {
 | max | 最大可选数 | _number \| string_ | - |
 | direction | 排列方向，可选值为 `horizontal` | _string_ | `vertical` |
 | iconSize | 所有复选框的图标大小，默认单位为 `px` | _number \| string_ | `24px` |
-| checkedColor | 所有复选框的选中状态颜色 | _string_ | `GBL01A 知乎蓝` |
+| checkedColor | 所有复选框的选中状态颜色 | _string_ | `GBL01A 主题色` |
 
 ### Checkbox Events
 

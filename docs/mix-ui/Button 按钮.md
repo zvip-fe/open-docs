@@ -26,9 +26,9 @@ export default () => {
   return (
     <DemoBlock title='按钮类型' padding='12px'>
       <div className='demo-button'>
-        <Button type='primary'>VIP 会员色</Button>
+        <Button type='primary'>会员色</Button>
         <Button type='pay'>购买红</Button>
-        <Button type='default'>知乎蓝</Button>
+        <Button type='default'>主题色</Button>
       </div>
     </DemoBlock>
   )
@@ -50,13 +50,13 @@ export default () => {
     <DemoBlock title='线面按钮' padding='12px'>
       <div className='demo-button'>
         <Button surface type='primary'>
-          VIP 会员色
+          会员色
         </Button>
         <Button surface type='pay'>
           购买红
         </Button>
         <Button surface type='default'>
-          知乎蓝
+          主题色
         </Button>
       </div>
     </DemoBlock>
@@ -79,13 +79,13 @@ export default () => {
     <DemoBlock title='描边按钮' padding='12px'>
       <div className='demo-button'>
         <Button stroke type='primary'>
-          VIP 会员色
+          会员色
         </Button>
         <Button stroke type='pay'>
           购买红
         </Button>
         <Button stroke type='default'>
-          知乎蓝
+          主题色
         </Button>
       </div>
     </DemoBlock>
@@ -108,31 +108,31 @@ export default () => {
     <DemoBlock title='禁用状态' padding='12px'>
       <div className='demo-button'>
         <Button disabled type='primary'>
-          VIP 会员色
+          会员色
         </Button>
         <Button disabled type='pay'>
           购买红
         </Button>
         <Button disabled type='default'>
-          知乎蓝
+          主题色
         </Button>
         <Button disabled surface type='primary'>
-          VIP 会员色
+          会员色
         </Button>
         <Button disabled surface type='pay'>
           购买红
         </Button>
         <Button disabled surface type='default'>
-          知乎蓝
+          主题色
         </Button>
         <Button disabled stroke type='primary'>
-          VIP 会员色
+          会员色
         </Button>
         <Button disabled stroke type='pay'>
           购买红
         </Button>
         <Button disabled stroke type='default'>
-          知乎蓝
+          主题色
         </Button>
       </div>
     </DemoBlock>
@@ -259,13 +259,13 @@ export default () => {
     <DemoBlock title='按钮形状' padding='12px'>
       <div className='demo-button'>
         <Button square type='primary'>
-          VIP 会员色
+          会员色
         </Button>
         <Button square type='pay'>
           购买红
         </Button>
         <Button square type='default'>
-          知乎蓝
+          主题色
         </Button>
       </div>
     </DemoBlock>

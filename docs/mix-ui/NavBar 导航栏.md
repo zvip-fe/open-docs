@@ -4,7 +4,7 @@
 
 为页面提供导航功能，常用于页面顶部。
 
-
+品牌方端内推荐优先使用 [setWindow 端能力](http://hybrid.in.zhihu.com/api/ui/setWindow) 实现简单顶部导航。
 
 ，注：还未实现全部规范功能。
 
@@ -72,7 +72,7 @@ export default () => {
 }
 ```
 
-### 仅知乎端内展示
+### 仅品牌方端内展示
 
 ```tsx
 import React from 'react'
@@ -86,7 +86,7 @@ const Child = () => {
       <NavBar
         onlyZhihuShow
         fixed={false}
-        title='仅知乎端内会展示我'
+        title='仅品牌方端内会展示我'
       />
 
       <DemoDescription content='onlyZhihuShow: false' />
@@ -102,7 +102,7 @@ const Child = () => {
 export default () => {
   return (
     <>
-      <DemoBlock title='知乎端内模拟 ua.Zhihu = true' padding='0'>
+      <DemoBlock title='品牌方端内模拟 ua.Zhihu = true' padding='0'>
         <ConfigProvider ua={{ Zhihu: true }}>
           <Child />
         </ConfigProvider>
@@ -135,7 +135,7 @@ export default () => {
 | fixed | 是否固定在顶部 | _boolean_ | `true` |
 | placeholder | 固定在顶部时，是否在标签位置生成一个等高的占位元素 | _boolean_ | `true` |
 | safeAreaInsetTop | 是否开启「刘海屏顶部安全区适配」 | _boolean_ | `true` |
-| onlyZhihuShow | 是否仅在知乎端内展示，需配合 **ConfigProvider** 组件传入 ua | _boolean_ | `false` |
+| onlyZhihuShow | 是否仅在品牌方端内展示，需配合 **ConfigProvider** 组件传入 ua | _boolean_ | `false` |
 
 ### Events
 

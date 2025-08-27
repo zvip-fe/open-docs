@@ -34,7 +34,7 @@ export default () => {
         text='弹窗提示'
         onClick={() =>
           Dialog.show({
-            title: '知乎',
+            title: '品牌方',
             message: '有问题就会有答案',
             showCancelButton: true
           })
@@ -55,7 +55,7 @@ export default () => {
         text='确认弹框'
         onClick={() =>
           Dialog.confirm({
-            title: '知乎',
+            title: '品牌方',
             message: '有问题就会有答案'
           })
             .then((res) => {
@@ -85,7 +85,7 @@ export default () => {
         text='Dialog.alert'
         onClick={async () => {
           await Dialog.alert({
-            title: '知乎',
+            title: '品牌方',
             message: '有问题就会有答案'
           })
           console.log('confirm')
@@ -96,7 +96,7 @@ export default () => {
         onClick={async () => {
           try {
             const res = await Dialog.show({
-              title: '知乎',
+              title: '品牌方',
               message: '有问题就会有答案',
               showCancelButton: true
             })
@@ -129,7 +129,7 @@ export default () => {
         text='竖排按钮弹窗'
         onClick={() =>
           Dialog.show({
-            title: '知乎',
+            title: '品牌方',
             message: '有问题就会有答案',
             theme: 'vertical-button',
             showCancelButton: true
@@ -160,7 +160,7 @@ export default () => {
         text='自定义内容'
         onClick={() =>
           Dialog.show({
-            title: '知乎',
+            title: '品牌方',
             message: (
               <div style={{ color: 'blue' }}>
                 有问题就会有答案
@@ -176,7 +176,7 @@ export default () => {
       />
       <Dialog
         visible={visible}
-        title='知乎'
+        title='品牌方'
         showCancelButton
         onConfirm={() => {
           Toast.info('点击确认按钮')
@@ -211,7 +211,7 @@ export default () => {
         text='自定义按钮'
         onClick={() =>
           Dialog.alert({
-            title: '知乎',
+            title: '品牌方',
             confirmButtonColor: 'green'
           })}
       />
@@ -253,7 +253,7 @@ export default () => {
         text='完全关闭后的回调'
         onClick={() =>
           Dialog.alert({
-            title: '知乎',
+            title: '品牌方',
             message: '有问题会有答案',
             onClosed: () => console.log('onClosed')
           })}
@@ -262,7 +262,7 @@ export default () => {
         text='异步关闭'
         onClick={() =>
           Dialog.base({
-            title: '知乎',
+            title: '品牌方',
             message: '有问题就会有答案',
             showCancelButton: true,
             onCancel: () => {
@@ -308,7 +308,7 @@ export default () => {
         text='关闭按钮'
         onClick={() =>
           Dialog.show({
-            title: '知乎',
+            title: '品牌方',
             message: '有问题就会有答案',
             closeable: true
           })}
@@ -317,7 +317,7 @@ export default () => {
         text='自定义关闭按钮'
         onClick={() =>
           Dialog.show({
-            title: '知乎',
+            title: '品牌方',
             message: '有问题就会有答案',
             closeable: true,
             closeIcon: <XmarkCircleFill24 />
@@ -350,7 +350,7 @@ export default () => {
       />
       <Dialog
         visible={visible}
-        title='知乎'
+        title='品牌方'
         showCancelButton
         onConfirm={() => {
           Toast.info('点击确认按钮')
@@ -400,7 +400,7 @@ export default () => {
       />
       <Dialog
         ref={ref}
-        title='知乎'
+        title='品牌方'
         showCancelButton
         onConfirm={() => {
           Toast.info('点击确认按钮')
