@@ -1,90 +1,25 @@
 {
-  "name": "mix-market-docs",
-  "displayName": "Mix-Market Documentation Library",
-  "description": "Comprehensive documentation library for Mix-Market ecosystem, featuring Mix-UI component library with 43+ mobile-first React components, API references, and development guides. Includes forms, navigation, data display, and interactive elements with TypeScript support.",
-  "version": "1.0.0",
-  "tags": [
-    "mix-market",
-    "documentation",
-    "react",
-    "component-library",
-    "mobile-ui",
-    "typescript",
-    "ui-components",
-    "frontend",
-    "design-system",
-    "responsive",
-    "api-docs",
-    "developer-tools"
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "Mix-Market Documentation Library",
+  "description": "Comprehensive documentation library for Mix-Market ecosystem, featuring Mix-UI component library with 43+ mobile-first React components and TypeScript support.",
+  "folders": [
+    "docs/mix-ui"
   ],
-  "website": "https://github.com/zvip-fe/open-docs",
-  "repository": "https://github.com/zvip-fe/open-docs",
-  "license": "MIT",
-  "author": "Mix-Market Team",
-  "language": "zh-CN",
-  "framework": "React",
-  "categories": [
-    "Documentation Library",
-    "UI Component Library", 
-    "React Components",
-    "Mobile UI",
-    "Developer Documentation"
+  "excludeFolders": [
+    "node_modules",
+    "scripts",
+    "dist"
   ],
-  "paths": [
-    {
-      "path": "docs/mix-ui",
-      "include": ["*.md"],
-      "description": "Mix-UI component library documentation with examples, API references, and usage guides for 43+ React components"
-    }
+  "excludeFiles": [
+    "package.json",
+    "tsconfig.json",
+    "tsup.config.ts",
+    "pnpm-lock.yaml"
   ],
-  "metadata": {
-    "ecosystem": "Mix-Market",
-    "libraries": ["Mix-UI"],
-    "componentCount": 43,
-    "lastUpdated": "2025-08-27",
-    "features": [
-      "Mix-Market ecosystem documentation",
-      "Mix-UI component library docs",
-      "TypeScript support",
-      "Mobile-first design",
-      "Comprehensive API documentation",
-      "Code examples with usage guides",
-      "Responsive components",
-      "Form validation",
-      "Navigation components",
-      "Data display components",
-      "Interactive elements",
-      "Theme customization"
-    ],
-    "components": [
-      "Button",
-      "Form",
-      "Input",
-      "Dialog",
-      "Tabs",
-      "Navigation",
-      "Table",
-      "Card",
-      "Modal",
-      "Dropdown",
-      "DatePicker",
-      "Checkbox",
-      "Radio",
-      "Switch",
-      "Loading",
-      "Toast",
-      "Popup",
-      "Overlay",
-      "Image",
-      "Typography",
-      "Space",
-      "Flex",
-      "Grid"
-    ]
-  },
-  "searchKeywords": [
-    "mix-market-docs",
-    "zvip-fe-open-docs",
-    "mix-market documentation"
+  "rules": [
+    "Use Mix-UI components for mobile-first React applications",
+    "Import components from '@kfe/mix-ui' package",
+    "Follow TypeScript best practices when using components",
+    "Check component API documentation for proper prop usage"
   ]
 }
