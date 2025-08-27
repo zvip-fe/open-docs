@@ -10,20 +10,20 @@ export class SensitiveUtils {
   static cleanSensitiveInfo(content: string): string {
     let cleanedContent = content;
 
-    // 1. 移除知乎内部链接和参考文档
+    // 1. 移除ZH内部链接和参考文档
     cleanedContent = this.removeInternalLinks(cleanedContent);
 
-    // 2. 替换知乎特定的业务内容
+    // 2. 替换ZH特定的业务内容
     cleanedContent = this.replaceBizContent(cleanedContent);
 
-    // 3. 移除或替换知乎内部依赖
+    // 3. 移除或替换ZH内部依赖
     cleanedContent = this.replaceInternalDependencies(cleanedContent);
 
     return cleanedContent;
   }
 
   /**
-   * 移除知乎内部链接
+   * 移除ZH内部链接
    * @param content 内容
    * @returns 清理后的内容
    */
@@ -42,11 +42,11 @@ export class SensitiveUtils {
     const colorLinkRegex = /^- 颜色系统：.*$/gm;
     cleaned = cleaned.replace(colorLinkRegex, '');
 
-    // 移除知乎端内推荐说明
-    const hybridRegex = /知乎端内推荐优先使用.*?实现简单顶部导航。/g;
+    // 移除ZH端内推荐说明
+    const hybridRegex = /ZH端内推荐优先使用.*?实现简单顶部导航。/g;
     cleaned = cleaned.replace(hybridRegex, '');
 
-    // 移除外部知乎链接
+    // 移除外部ZH链接
     const zhihuLinkRegex = /href=['"]https:\/\/www\.zhihu\.com['"]/g;
     cleaned = cleaned.replace(zhihuLinkRegex, 'href="https://example.com"');
 
@@ -74,8 +74,8 @@ export class SensitiveUtils {
       '这是一个成功提示消息'
     );
 
-    // 替换知乎盐选会员活动内容
-    if (cleaned.includes('盐选好内容') || cleaned.includes('知乎小管家')) {
+    // 替换ZH盐选会员活动内容
+    if (cleaned.includes('盐选好内容') || cleaned.includes('ZH小管家')) {
       cleaned = cleaned.replace(
         /const content = `.*?`/gs,
         `const content = \`<p>这是一个富文本内容示例。</p>
@@ -99,13 +99,13 @@ export class SensitiveUtils {
   private static replaceInternalDependencies(content: string): string {
     let cleaned = content;
 
-    // 替换知乎内部图标库引用
+    // 替换ZH内部图标库引用
     cleaned = cleaned.replace(
       /import \{ ([^}]+) \} from '@zhihu\/design-icons'/g,
       "// 注意：需要替换为你项目中的图标库\n// import { $1 } from 'your-icon-library'"
     );
 
-    // 替换知乎静态资源链接
+    // 替换ZH静态资源链接
     cleaned = cleaned.replace(
       /https:\/\/static\.zhihu\.com\/[^\s'"]+/g,
       'https://example.com/your-static-resource.pag'
